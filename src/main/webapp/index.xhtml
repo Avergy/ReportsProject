@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <h:outputStylesheet library="css" name="main.css"/>
+    <title>WebService</title>
+</h:head>
+<h:body>
+    <div class="main">
+        <div class="content">
+
+            <h1> Reports</h1>
+
+            <h:form>
+
+                <div class="period">
+                    <p>
+                        <p:outputLabel for="from" value="From:"/>
+                        <p:calendar id="from" value="#{reportBean.fromDate}" required="true"/></p>
+                    <p>
+                        <p:outputLabel for="to" value="To:"/>
+                        <p:calendar id ="to" value="#{reportBean.toDate}" required="true"/>
+                    </p>
+                </div>
+
+                <h:commandButton value="Get orders per period"
+                             action="#{reportBean.getOrderPerPeriod}"/>
+
+            </h:form>
+
+        </div>
+    </div>
+</h:body>
+</html>
